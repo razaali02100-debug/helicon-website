@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.arrow{
+  margin-left:auto;
+  font-size:24px;
+  color:#aaa;
+  transition:0.3s;
+}
+
+/* Jab checkbox check ho */
+#agree:checked ~ .arrow{
+  color:black;
+}
+
+.check{
+  width:22px;
+  height:22px;
+  border:2px solid #ccc;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" id="agree">
+        <label for="agree" class="check"></label>
+        
+        <span class="text">I agree to the privacy policy.</span>
+        <span class="arrow">→</span>
+      
+      </div>
+</body>
+</html>
