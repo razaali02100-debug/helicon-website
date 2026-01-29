@@ -5,42 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.custom-check{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: Arial;
 }
 
-.arrow{
-  margin-left:auto;
-  font-size:24px;
-  color:#aaa;
-  transition:0.3s;
+.custom-check input{
+  display: none; /* original checkbox hide */
 }
 
-/* Jab checkbox check ho */
-#agree:checked ~ .arrow{
-  color:black;
+.checkmark{
+  width: 22px;
+  height: 22px;
+  border: 2px solid #555;
+  border-radius: 50%;   /* circle */
+  position: relative;
+  transition: 0.2s;
 }
 
-.check{
-  width:22px;
-  height:22px;
-  border:2px solid #ccc;
-  border-radius:50%;
-  cursor:pointer;
+/* checked state */
+.custom-check input:checked + .checkmark{
+  border-color: #2196f3;
+  background: #2196f3;
+}
+
+/* tick */
+.checkmark::after{
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 5px;      /* tick width (size control) */
+  height: 10px;    /* tick height (size control) */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+/* show tick when checked */
+.custom-check input:checked + .checkmark::after{
+  opacity: 1;
 }
 
     </style>
 </head>
 <body>
-    <div class="box">
-        <input type="checkbox" id="agree">
-        <label for="agree" class="check"></label>
-        
-        <span class="text">I agree to the privacy policy.</span>
-        <span class="arrow">→</span>
-      
-      </div>
+   <label class="custom-check">
+  <input type="checkbox">
+  <span class="checkmark"></span>
+  Agree
+</label>
+
 </body>
 </html>
