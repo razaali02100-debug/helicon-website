@@ -2,6 +2,14 @@
     html{
         overflow-x: hidden;
     }
+      .six-bbb{ max-width: 310px; }  /* Mobile: 1 card visible */
+  .six-left{ flex: 0 0 297px; }
+  @keyframes stepScroll{
+    0%, 20% { transform: translateX(0); }
+    40%, 60% { transform: translateX(-300px); }
+    80%, 100% { transform: translateX(-600px); }
+  }
+
     .dot-store{
     display: none;
 }
@@ -121,10 +129,10 @@
     grid-row: auto;
     height: 220px;
   }
-  #six-2,
+  /* #six-2,
   #six-3{
     display: none;
-  }
+  } */
   .six-container{
         padding: 22px 4px;
   }
@@ -283,6 +291,13 @@ background-color: #424242;
         overflow-x: hidden;
         font-size: 43.75%;
     }
+       .six-bbb{ max-width: 300px; }  /* Mobile: 1 card visible */
+  .six-left{ flex: 0 0 294px; }
+  @keyframes stepScroll{
+    0%, 20% { transform: translateX(0); }
+    40%, 60% { transform: translateX(-300px); }
+    80%, 100% { transform: translateX(-600px); }
+  }
     .hero-content {
         margin-top: 54px;
     }
@@ -420,9 +435,9 @@ background-color: #424242;
     grid-row: auto;
     height: 220px;
   }
-  #six-2{
+  /* #six-2{
     display: none;
-  }
+  } */
   .six-container{
         padding: 22px 4px;
   }
@@ -613,6 +628,13 @@ background-color: #424242;
     html{
         overflow-x: hidden;
     }
+         .six-bbb{ max-width: 908px; }  /* Mobile: 1 card visible */
+  .six-left{ flex: 0 0 400px; }
+  @keyframes stepScroll{
+    0%, 20% { transform: translateX(0); }
+    40%, 60% { transform: translateX(-300px); }
+    80%, 100% { transform: translateX(-600px); }
+  }
     .dot-store{
   font-size: 22px;
   color: #fff;

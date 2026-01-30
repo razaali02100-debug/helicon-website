@@ -8,9 +8,67 @@ html{
     overflow-x: hidden;
   }
   body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: 'LouisGeorgeCafe', sans-serif;
+  }
+ 
+.page-loader{
+  position:fixed;
+  inset:0;
+  background:#fcf6f6;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation: hideLoader 0.8s ease forwards;
+  animation-delay:4s; /* ⏱ 4 sec */
+  z-index:9999;
 }
+
+/* Dots */
+.loader{
+  display:flex;
+  gap:12px;
+}
+
+.loader span{
+  width:14px;
+  height:14px;
+  background:#f12a2a;
+  border-radius:50%;
+  animation: wave 1.2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+}
+
+.loader span:nth-child(1){ animation-delay:0s;
+ }
+.loader span:nth-child(2){ animation-delay:0.2s;
+ }
+.loader span:nth-child(3){ animation-delay:0.4s;
+  }
+.loader span:nth-child(4){ animation-delay:0.6s;
+
+ }
+
+@keyframes wave{
+  0%,100%{
+    transform: translateY(0);
+  }
+  40%{
+    transform: translateY(-16px); /* jump */
+  }
+  60%{
+    transform: translateY(0); /* land squash */
+  }
+}
+
+/* ===== Hide Loader ===== */
+@keyframes hideLoader{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+
 .nav-hamburger{
   display: none;
 }
@@ -1450,31 +1508,88 @@ flex-direction: column;
     color: #000;  
     font-weight: 500;
   }
+  /* .six-bbb{
+  width:100%;      
+  overflow:hidden;
+  border:2px solid #fff;
+  border-radius:12px;
+}
   .six-bottom{
-    width: 100%;
+    width: max-content;
     background-color: #fff;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 1 0;
+     animation: scrollX 20s steps(5) infinite;
+    animation-delay:5s; 
     
   }
-  .six-left{
-    /* flex-grow: 1; */
+
+.six-left{
     height: 100%;
     background-color: #fff;
     padding: 12px;
     position: relative;
     margin-right: 30px;
     width: 100%;
-    max-width: 24.3rem;
-  }
+    max-width: 30.3rem;
+  } */
+.six-bbb{
+  width: 100%;
+  max-width: 1082px;  /* Desktop: 3 cards visible */
+  overflow: hidden;
+  margin: 0 auto;
+}
 
-  .six-left-mini{
-    padding: 12px;
-    border: 1px solid rgb(229, 226, 226);
-    border-radius: 5px;
+/* Carousel container */
+.six-bottom{
+  display: flex;
+  gap: 7px;
+  width: max-content;
+  animation: stepScroll 15s ease-in-out infinite;
+}
+
+/* Each card */
+.six-left{
+  flex: 0 0 352px;   /* fixed width for desktop */
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+}
+
+/* Stepwise scroll with 5s pause */
+@keyframes stepScroll{
+  0%     { transform: translateX(0); }      
+  12.5%  { transform: translateX(0); }      /* pause 1st step */
+  
+  25%    { transform: translateX(-360px); } /* 1st card slides */
+  37.5%  { transform: translateX(-360px); } /* pause 2nd step */
+  
+  50%    { transform: translateX(-720px); } /* 2nd card slides */
+  62.5%  { transform: translateX(-720px); } /* pause 3rd step */
+  
+  75%    { transform: translateX(-1069px); } /* 3rd card slides */
+  87.5%  { transform: translateX(-1069px); } /* pause 4th step */
+  
+  100%   { transform: translateX(-1069px); } /* last card slides, loop to duplicates */
+}
+@keyframes centerHighlight {
+  0%, 70% { background: #fff; color: #000; }  /* normal */
+  30%, 50% { background: red; color: #fff; }  /* center highlight during pause */
+}
+
+
+
+
+.six-left-mini{
+  padding: 12px;
+  border: 1px solid rgb(229, 226, 226);
+  border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
