@@ -701,7 +701,7 @@ font-size: 23px;
     align-items: center;
     color: white;
     text-align: center;
-    margin-top: 90px;
+    margin-top: 70px;
   }
   
   /* animation */
@@ -717,7 +717,7 @@ font-size: 23px;
     transform: translateY(-80px);
     opacity: 0;
     animation: textDown 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 4s;
   }
   @keyframes textDown{
     to{
@@ -732,7 +732,7 @@ font-size: 23px;
     transform: translateY(-80px);
     opacity: 0;
     animation: textDown 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 4s;
   }
   /* .hero-content > a{
     display: inline-block;
@@ -763,7 +763,7 @@ font-size: 23px;
     transform: translateY(60px);
     opacity: 0;
     animation: btnUp 1s ease forwards;
-    animation-delay:2.3s;
+    animation-delay:4s;
 }
 @keyframes btnUp{
     to{
@@ -818,10 +818,7 @@ font-size: 23px;
 @keyframes bounce {
     0%,100%{
         transform: translateY(-15%);
-        -webkit-transform: translateY(-15%);
-        -moz-transform: translateY(-15%);
-        -ms-transform: translateY(-15%);
-        -o-transform: translateY(-15%);
+   
 }
 50%{
     transform: translateY(10%);
@@ -835,12 +832,53 @@ font-size: 23px;
 
 .text-2{
     padding-top: 22px;
-    padding-bottom: 26px;
+    padding-bottom: 46px;
+     display: inline-block;
 }
+
 .text-2 span{
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 500;
+    letter-spacing: -2px;
+     display: inline-block;
+  opacity: 0;
+  animation: letterMove 0.8s forwards;
 }
+.text-2 span:nth-child(even){
+  transform: translateY(40px);
+}
+
+/* ODD letters → upar se neeche */
+.text-2 span:nth-child(odd){
+  transform: translateY(-40px);
+}
+.text-2 span:nth-child(1){ animation-delay: 3.4s; }
+.text-2 span:nth-child(2){ animation-delay: 3.55s; }
+.text-2 span:nth-child(3){ animation-delay: 3.7s; }
+.text-2 span:nth-child(4){ animation-delay: 3.85s; }
+.text-2 span:nth-child(5){ animation-delay: 4s; }
+.text-2 span:nth-child(6){ animation-delay: 4.15s; }
+.text-2 span:nth-child(7){ animation-delay: 4.3s; }
+.text-2 span:nth-child(8){ animation-delay: 4.45s; }
+.text-2 span:nth-child(9){ animation-delay: 4.6s; }
+.text-2 span:nth-child(10){ animation-delay: 4.75s; }
+.text-2 span:nth-child(11){ animation-delay: 4.9s; }
+
+@keyframes letterMove{
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
 .bootom-left-content{
     position: relative;
     background-color: #fff;
