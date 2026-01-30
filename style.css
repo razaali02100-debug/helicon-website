@@ -20,7 +20,7 @@ html{
   justify-content:center;
   align-items:center;
   animation: hideLoader 0.8s ease forwards;
-  animation-delay:4s; /* ⏱ 4 sec */
+  animation-delay:2s; /* ⏱ 4 sec */
   z-index:9999;
 }
 
