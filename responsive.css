@@ -2,6 +2,7 @@
     html{
         overflow-x: hidden;
     }
+    
       .six-bbb{ max-width: 310px; }  /* Mobile: 1 card visible */
   .six-left{ flex: 0 0 297px; }
   @keyframes stepScroll{
